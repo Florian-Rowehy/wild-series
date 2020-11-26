@@ -1,0 +1,20 @@
+{% extends '/base.html.twig' %}
+
+{% block title %}Film by categories{% endblock %}
+
+{% block body %}
+    <h1>{{ category|capitalize }} films</h1>
+    {% for program in programs %}
+        <div>
+            <a href="{{ path('program_show', {'id': program.id}) }}">
+                <h2>{{ program.id }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            </a>
+            <p>{{ program.summary }}</p>
+        </div>
+    {% else %}
+        Aucune série trouvée.
+    {% endfor %}
+    <a href="{{ path('app_index') }}">
+        Retour à l'accueil
+    </a>
+{% endblock %}
