@@ -59,8 +59,10 @@ class ProgramController extends AbstractController
                 'No program with '.$id.' title, found in program\'s table.'
             );
         }
+        $seasons = $program->getSeasons();
         return $this->render('program/show.html.twig', [
             'program' => $program,
+            'seasons' => $seasons,
         ]);
     }
 }
