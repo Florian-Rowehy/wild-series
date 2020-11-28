@@ -36,39 +36,25 @@ class ProgramController extends AbstractController
 
     /**
      * @Route(
-     *     "/programs/{programId}/seasons/{seasonId}",
+     *     "/programs/{program}/seasons/{season}",
      *     name="season_show",
-     *     requirements={"programId"="^\d+$", "seasonId"="^\d+$"},
+     *     requirements={"program"="^\d+$", "season"="^\d+$"},
      *     methods={"GET"},
      *     )
-     * @param int $programId
-     * @param int $seasonId
+     * @param Program $program
+     * @param Season $season
      * @return Response
      */
-    public function showSeason(int $programId, int $seasonId): Response
+    public function showSeason(Program $program, Season $season): Response
     {
-        if (!$programId) {
-            throw $this
-                ->createNotFoundException('No id has been sent to find a program in program\'s table.');
-        }
-        if (!$seasonId) {
-            throw $this
-                ->createNotFoundException('No id has been sent to find a season in season\'s table.');
-        }
-        $program = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->find($programId);
         if (!$program) {
             throw $this->createNotFoundException(
-                'No program with '.$programId.' id, found in program\'s table.'
+                'No program with corresponding id, found in program\'s table.'
             );
         }
-        $season = $this->getDoctrine()
-            ->getRepository(Season::class)
-            ->find($seasonId);
         if (!$season) {
             throw $this->createNotFoundException(
-                'No season with '.$seasonId.' id found in season\'s table.'
+                'No season with corresponding id found in season\'s table.'
             );
         }
         $episodes = $season->getEpisodes();
@@ -87,23 +73,14 @@ class ProgramController extends AbstractController
      *     requirements={"id"="^\d+$"},
      *     methods={"GET"}
      *     )
-     *
-     * @param $id
+     * @param Program $program
      * @return Response
      */
-    public function show($id): Response
+    public function show(Program $program): Response
     {
-        if (!$id) {
-            throw $this
-                ->createNotFoundException('No id has been sent to find a program in program\'s table.');
-        }
-        $program = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->find($id);
-
         if (!$program) {
             throw $this->createNotFoundException(
-                'No program with '.$id.' id, found in program\'s table.'
+                'No program with corresponding id, found in program\'s table.'
             );
         }
         $seasons = $program->getSeasons();
