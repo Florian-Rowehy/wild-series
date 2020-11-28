@@ -37,7 +37,7 @@ class CategoryController extends AbstractController
      *     )
      * @param string $categoryName
      */
-    public function show(string $categoryName)
+    public function show(string $categoryName): Response
     {
         if (!$categoryName) {
             throw $this
