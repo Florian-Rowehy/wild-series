@@ -29,7 +29,6 @@ class ProgramController extends AbstractController
         }
 
         return $this->render('program/index.html.twig', [
-            'website' => 'Wild Séries',
             'programs' => $programs,
         ]);
     }
@@ -61,7 +60,6 @@ class ProgramController extends AbstractController
             );
         }
         return $this->render('program/show.html.twig', [
-            'id' => $id,
             'program' => $program,
         ]);
     }
