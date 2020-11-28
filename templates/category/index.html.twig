@@ -7,7 +7,7 @@
     {% for category in categories %}
         <div>
             <h2>{{ loop.index }} - {{ category.name }}</h2>
-            <a href="{{ path("category_show", { id: category.id }) }}">Voir la fiche</a>
+            <a href="{{ path("category_show", { categoryName: category.name|lower }) }}">Voir les films correspondants à cette catérgorie</a>
         </div>
     {% else %}
         Aucune catégorie trouvée.
