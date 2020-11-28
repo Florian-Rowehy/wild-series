@@ -38,7 +38,7 @@ class Season
     /**
      * @ORM\Column(type="text")
      */
-    private $ption;
+    private $description;
 
     /**
      * @ORM\OneToMany(targetEntity=Episode::class, mappedBy="season", orphanRemoval=true)
@@ -91,18 +91,6 @@ class Season
         return $this;
     }
 
-    public function getPtion(): ?string
-    {
-        return $this->ption;
-    }
-
-    public function setPtion(string $ption): self
-    {
-        $this->ption = $ption;
-
-        return $this;
-    }
-
     /**
      * @return Collection|Episode[]
      */
@@ -129,6 +117,18 @@ class Season
                 $episode->setSeason(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
