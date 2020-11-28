@@ -37,7 +37,7 @@ class ProgramController extends AbstractController
      * @route(
      *     "/{id}",
      *     name="show",
-     *     requirements={"id"="\d+"},
+     *     requirements={"id"="^\d+$"},
      *     methods={"GET"}
      *     )
      *
@@ -61,38 +61,6 @@ class ProgramController extends AbstractController
         }
         return $this->render('program/show.html.twig', [
             'program' => $program,
-        ]);
-    }
-
-    /**
-     * @route(
-     *     "/category/{category}",
-     *     name="show_category",
-     *     requirements={"category"="^[a-z]+$"},
-     *     methods={"GET"}
-     *     )
-     * @param $category
-     * @return Response
-     */
-    public function showByCategory($category)
-    {
-        if (!$category) {
-            throw $this
-                ->createNotFoundException('No category argument');
-        }
-
-        $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findByCategory($category);
-
-        if (!$programs) {
-            throw $this->createNotFoundException(
-                'No program with '.$category.' category found \'program\' table.'
-            );
-        }
-        return $this->render('program/category.html.twig', [
-            'programs' => $programs,
-            'category' => $category,
         ]);
     }
 }
