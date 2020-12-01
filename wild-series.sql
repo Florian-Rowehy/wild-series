@@ -26,3 +26,124 @@ INSERT INTO episode (season_id, number, title, synopsis) VALUES
 (5, 8, 'Witness Marks', 'Steven and Hugh drive around to find Luke. Steven believes the family''s issues are mental and explains he underwent a vasectomy to avoid spreading his family''s "sickness". Shirley and Theo stay at the funeral parlor to keep watch on whether Luke will use the stolen credit card. They have an argument and are spooked by unexplained knocks across the walls. Shirley gets a notification of Luke using the credit card for gas, at a gas station on the way to Hill House. Hugh reveals to Steven that while he was living in the house, Steven had been seeing ghosts all along; he just didn''t realize they were ghosts. He also explains that Steven and his siblings are like "an unfinished meal" to Hill House. Shirley and Theo decide to drive up to Hill House, while continuing to argue with each other. Nellie’s ghost scares them during their argument, until they mend their bond. Luke arrives at Hill House and tries to burn it down, only to be caught off guard by a vision of Olivia and another ghost, who incapacitates Luke.'),
 (5, 9, 'Screaming Meemies', 'In a flashback, Hugh finds Olivia, Nell, and Luke asleep on a couch, and she tells him she wished the children could stay like that forever. When she walks through her reading room door she enters the morgue containing the corpses of adult Nell and Luke, where Nell speaks to her. She wakes up in the middle of the night and encounters the ghost of Poppy Hill. Olivia agrees to leave Hill House the next morning to get some rest at the home of her sister, Janet, but actually checks into a nearby motel. She returns to Hill House and the family''s last night at the mansion starts to unfold as an unstable Olivia rouses the twins and Abigail, who was staying over for the night, for a tea party in the Red Room. Shirley noticed her mother behaving oddly in the kitchen and awakes Hugh. He realizes Olivia had tainted tea with rat poison and is able to intervene before Luke and Nell drank the tea, but arrived too late to save Abigail. Hugh gets the kids out of the house, leaving a horrified Olivia behind, who dies when she falls off the top of the spiral staircase.'),
 (5, 10, 'Silence Lay Steadily', 'Steven and Hugh see Luke lying unconscious in the Red Room after failing to burn down Hill House. Steven becomes locked in the room and awakens from a nightmare to find Luke near death as Theo and Shirley, unconscious nearby, awaken after experiencing revelatory dreams about their lives. In Luke''s dream he arises inside a pristine room and finds Olivia, Abigail, and a young Nell. Olivia wants him to stay, but Nell tells him to leave. He wakes up gasping and points to Nell''s specter as having saved him. Nell explains that the Red Room is the "stomach" of the house and the room in which each of them had lived a personal fantasy. Before vanishing she assures them that they had all loved each other completely. Olivia''s ghost tells Poppy to stay away from Hugh. Olivia doesn''t want her children to leave, but Hugh convinces her to open the door and let them escape. Hugh and Steven stay behind and Olivia''s death and its aftermath are revealed. The Dudleys were Abigail''s parents and convince the younger Hugh to keep the death of Abigail and how it transpired a secret. Hugh, who had died by now, enters the room and joins Olivia and Nell. Two years later, the siblings, with bonds reconciled, celebrate Luke''s sobriety together with their partners.');
+
+
+
+#Walking Dead S01
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(1, 1, 'Days Gone Bye', 'Le shérif adjoint Rick Grimes se réveille d''un coma et cherche sa famille dans un monde ravagé par les morts-vivants.'),
+(1, 2, 'Cran', 'À Atlanta, Rick est secouru par un groupe de survivants, mais ils se retrouvent bientôt pris au piège dans un grand magasin entouré de marcheurs.'),
+(1, 3, 'Dis-le aux grenouilles', 'Rick est réuni avec Lori et Carl mais décide bientôt - avec certains des autres survivants - de retourner sur le toit et de sauver Merle. Pendant ce temps, les tensions sont vives entre les autres survivants du camp.'),
+(1, 4, 'Vatos', 'Rick, Glenn, Daryl et T-Dog rencontrent un groupe de survivants apparemment hostiles à la recherche de Merle. De retour au camp, Jim commence à se comporter de manière erratique.'),
+(1, 5, 'Incendies', 'Après l''attaque du camp, Rick conduit les survivants au C.D.C., dans l''espoir qu''ils puissent guérir un Jim infecté.'),
+(1, 6, 'TS-19', 'Les survivants ont accès au C.D.C. dans l''espoir d''un refuge sûr.');
+#Walking Dead S02
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(2, 1, 'Ce qui nous attend','Le projet du groupe de se rendre à Fort Benning est suspendu lorsque Sophia disparaît.'),
+(2, 2, 'Saignée','Après que Carl ait été accidentellement abattu, le groupe est amené dans une famille vivant dans une ferme voisine. Shane fait un dangereux voyage à la recherche de fournitures médicales.'),
+(2, 3, 'Garde le dernier','Alors que l''état de Carl continue de se détériorer, Shane et Otis tentent d''esquiver les marcheurs alors qu''ils retournent à la ferme'),
+(2, 4, 'Cherokee Rose','Avec Carl en convalescence, le groupe se concentre sur la recherche de Sophia. Glenn et Maggie partent en voyage pour trouver des fournitures.'),
+(2, 5, 'Chupacabra','Seul dans les bois, Daryl trouve un indice mais est blessé et attaqué par des marcheurs. Rick remet en question ses choix. Glenn reçoit des signaux mitigés de Maggie.'),
+(2, 6, 'Secrets','Dale confronte Hershel après que Glenn lui ait parlé des marcheurs dans la grange. Pendant ce temps, Lori a du mal à accepter sa grossesse et Shane essaie d''apprendre à Andrea comment utiliser les armes.'),
+(2, 7, 'À peu près déjà mort','Glenn parle au reste du groupe des marcheurs dans la grange, les divisant sur ce qu''il faut faire. Pendant ce temps, Hershel fixe une date limite pour le départ du groupe, à moins que Rick ne fasse une tâche difficile.'),
+(2, 8, 'Nebraska','À la suite de l''incident de la grange; le groupe enterre des êtres chers, Beth tombe sous le choc, et Rick et Glenn partent à la recherche d''Hershel lorsqu''il disparaît.'),
+(2, 9, 'Triggerfinger','Rick, Glenn et Hershel sont sous le feu de l''ennemi après leur rencontre avec Dave et Tony. Pendant ce temps, Shane s''en prend à Lori quand tout le monde se rend compte qu''elle a disparu.'),
+(2, 10, '18 milles','Rick et Shane se disputent pour savoir quoi faire avec Randall. De retour à la ferme, Lori, Andrea et Maggie ont affaire à une Beth suicidaire.'),
+(2, 11, 'Juge, jury, bourreau','Dale craint que le groupe perde son humanité alors que Rick et les autres votent pour exécuter Randall.'),
+(2, 12, 'Meilleurs anges','Le comportement antagoniste de Shane atteint de nouveaux sommets, tandis que Carl subit les conséquences de ses actes.'),
+(2, 13, 'À côté du feu mourant','Alors que la ferme est envahie par les marcheurs, le groupe se bat pour s''échapper');
+#Walking Dead S03
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(3, 1,'La graine','Après des mois de fuite, le groupe se réfugie dans une prison fédérale, tandis qu''ailleurs, la santé d''Andrea commence à se détériorer.'),
+(3, 2,'Malade','Alors que l''état de santé de Hershel s''aggrave, Rick, Daryl et T-Dog traitent avec un groupe de prisonniers.'),
+(3, 3,'Marche avec moi','Andrea et Michonne sont amenées dans une communauté fortifiée dirigée par un homme appelé The Governor.'),
+(3, 4,'Tueur à l''intérieur','Lori entre en travail lorsque la prison est attaquée. Michonne tente de convaincre Andrea de quitter Woodbury.'),
+(3, 5,'Dire le mot','Rick a du mal à faire face. Andrea et Michonne se séparent. Daryl et Maggie partent chercher de la nourriture et des vêtements pour le bébé.'),
+(3, 6,'Traqué','Rick reçoit un appel téléphonique mystérieux. Andrea se rapproche du gouverneur. Merle tente de traquer Michonne.'),
+(3, 7,'Quand les morts viennent frapper','Michonne conduit Rick, Daryl et Oscar à Woodbury pour sauver Glenn et Maggie. Merle essaie de forcer les informations à sortir de Glenn.'),
+(3, 8,'Fait pour souffrir','Rick, Daryl, Michonne et Oscar entrent à Woodbury à la recherche de Glenn et Maggie. Pendant ce temps, un nouveau groupe de survivants rencontre la prison.'),
+(3, 9,'Le roi du suicide','Woodbury est laissé dans le désarroi suite à l''attaque du groupe de Rick. La présence de Merle dans le groupe provoque des conflits.'),
+(3, 10,'Accueil','Rick continue de voir des visions de Lori. Le gouverneur prévoit un assaut sur la prison. Daryl et Merle se débrouillent seuls dans la forêt.'),
+(3, 11,'Je ne suis pas un Judas','Alors que Rick et le groupe débattent de leur prochain plan d''action, Andrea essaie de négocier avec eux. Pendant ce temps, le gouverneur prépare Woodbury pour la bataille.'),
+(3, 12,'Clair','Rick tombe sur un visage familier quand lui, Carl et Michonne retournent dans la ville natale de Rick pour plus d''armes à feu pour se fortifier contre le gouverneur.'),
+(3, 13,'Flèche sur le montant de la porte','Rick et le gouverneur se rencontrent face à face, apparemment pour prendre une résolution pacifique afin d''éviter de nouvelles effusions de sang. De retour à la prison, des tensions surgissent entre Merle et le reste du groupe.'),
+(3, 14,'Proie','Le gouverneur traque Andrea quand elle fuit Woodbury. Pendant ce temps, des tensions surgissent au sein du groupe de Tyreese et le plan du gouverneur pour le groupe de Rick est saboté.'),
+(3, 15 ,'Cette triste vie','Alors que Rick décide du sort de Michonne, Merle prend les choses en main.'),
+(3, 16,'Bienvenue dans les tombes','Alors que Rick et le groupe se préparent à l''attaque imminente du gouverneur, Andrea se bat pour échapper à la captivité.');
+
+#Walking Dead S04
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(4, 1, '30 jours sans accident', 'Plusieurs mois se sont écoulés et Rick et le groupe élargi vivent une vie plus paisible à la prison. Des problèmes surgissent lorsque Rick rencontre un nouveau survivant et qu''une course de ravitaillement se termine par un désastre.'),
+(4, 2, 'Infecté', 'Rick est obligé d''abandonner son style de vie tranquille lorsqu''un virus mystérieux met en danger la vie de tout le monde à la prison.'),
+(4, 3, 'Isolement', 'Alors que les malades sont mis en quarantaine, Daryl, Tyreese, Michonne et Bob quittent la prison à la recherche de fournitures médicales. Rick fait une découverte choquante.'),
+(4, 4, 'Indifférence', 'Daryl, Tyreese, Michonne et Bob continuent à pied à l''école vétérinaire à la recherche de médecine. Rick et Carol partent en courant dans une ville voisine où ils trouvent deux traînards non infectés.'),
+(4, 5, 'Internement', 'Hershel a du mal à soigner les malades alors que la situation dans le bloc cellulaire s''aggrave. Pendant ce temps, Rick et Carl défendent la prison alors que les clôtures cèdent.'),
+(4, 6, 'Appâts vivants', 'Le gouverneur se lie avec une petite famille après la chute de Woodbury.'),
+(4, 7, 'Poids mort', 'Le gouverneur planifie son prochain déménagement alors que lui, Lilly, Tara et Meghan s''adaptent à un nouvel environnement.'),
+(4, 8, 'Allé trop loin', 'Rick et le groupe font face à un danger imminent alors que le gouverneur tente de prendre la prison'),
+(4, 9, 'Après', 'Avec le débordement de la prison, Rick et Carl se retrouvent sur la route à la recherche d''un abri. Pendant ce temps, Michonne est hantée par les souvenirs du passé.'),
+(4, 10, 'Détenus', 'Beth essaie de garder espoir. Tyreese, Lizzie et Mika rencontrent un visage familier. Glenn et Maggie ont du mal à se débrouiller l''un sans l''autre.'),
+(4, 11, 'Revendiqué', 'Alors que Carl et Michonne cherchent des fournitures, Rick est confronté à une bande de maraudeurs. Pendant ce temps, Glenn et Tara sont réunis avec trois inconnus pour une mission importante.'),
+(4, 12, 'Encore', 'Daryl et Beth cherchent refuge dans les bois, où un conflit éclate entre les deux.'),
+(4, 13, 'Seul', 'Maggie, Sasha et Bob s''affrontent pour savoir s''ils doivent se rendre à Terminus. Daryl et Beth se réfugient dans une maison funéraire apparemment abandonnée.'),
+(4, 14, 'Le bosquet', 'Carol doit faire face à de vieux secrets et au comportement psychotique de Lizzie quand elle, Tyreese et les filles se réfugient dans une maison vacante sur le chemin de Terminus.'),
+(4, 15, 'Nous', 'Glenn et Tara sont sur le chemin de Terminus, mais Abraham est réticent. Daryl a du mal à s''adapter aux règles des réclamants.'),
+(4, 16, 'Une', 'Rick, Carl et Michonne se croisent à nouveau avec les réclamants sur le chemin de Terminus, alors que le soi-disant sanctuaire commence à révéler son vrai visage.');
+
+#American horror story S01
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(6, 1, 'Pilote', 'Le thérapeute Ben Harmon, sa femme Vivien et leur fille Violet traversent le pays à Los Angeles pour échapper à leur passé troublé.'),
+(6, 2, 'Violation de domicile', 'Les amateurs de tueurs en série reconstituent les meurtres brutaux de deux étudiantes en sciences infirmières, tandis que Ben retourne à Boston pour réparer une erreur impliquant une ancienne flamme.'),
+(6, 3, 'Maison du meurtre', 'Ben confronte Moira à propos d''un comportement étrange récent, tandis que Vivien découvre le premier résident de la maison.'),
+(6, 4, 'Halloween: Partie 1', 'Deux des anciens résidents de la maison, les architectes d''intérieur Chad et Patrick, donnent des conseils de décoration aux Harmon.'),
+(6, 5, 'Halloween: 2e partie', 'Lors d''un rendez-vous avec Violet, Tate est harcelée par un groupe d''adolescents sanglants. Ben et Vivien sont hantés par l''un des nouveaux invités de la maison.'),
+(6, 6, 'Piggy Piggy', 'Ben voit un nouveau patient qui est terrifié par la légende d''un homme qui massacre ceux qui répètent un mantra spécifique dans un miroir.'),
+(6, 7, 'Journée portes ouvertes', 'Moira persuade un acheteur potentiel de faire une offre. Constance et Larry travaillent contre ses efforts.'),
+(6, 8, 'L''homme caoutchouc', 'L''homme en combinaison en caoutchouc est révélé. La santé mentale de Vivian change.'),
+(6, 9, 'Petite fille effrayante', 'L''une des victimes de meurtre les plus célèbres de l''histoire rend visite à la maison. Constance découvre davantage le mauvais comportement de Tate.'),
+(6, 10, 'nfants fumants', 'En 1994, Larry est brûlé. Dans le présent, Ben commence à comprendre ce qui est arrivé à la cause de l''institutionnalisation de Vivien. Constance est interrogée par la police dans la mort de Travis. Violet apprend quelque chose sur elle-même qu''elle ne sait pas.'),
+(6, 11, 'Naissance', 'Vivien accouche. Violet apprend qui a engendré l''un de ses nouveaux frères et sœurs.'),
+(6, 12, 'Après la naissance', 'Les conséquences du travail difficile de Vivien sont révélées et Ben fait des plans pour sortir de la maison. Certains esprits ont d''autres plans et la famille doit se rassembler pour traverser ces changements très difficiles.');
+
+#American horror story S02
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(7, 1, 'Bienvenue à Briarcliff', 'Après une expérience qui a changé sa vie, un jeune homme est admis dans un asile d''aliénés notoire, tandis qu''un journaliste local est déterminé à obtenir toute l''histoire.'),
+(7, 2, 'Trucs et friandises', 'Un exorciste est convoqué à Briarcliff pour aider à sauver un garçon de ferme en difficulté. Le secret le plus sombre de sœur Jude est révélé.'),
+(7, 3, 'Nor''easter', 'Un groupe de patients planifie une évasion de l''asile lors d''une violente tempête.'),
+(7, 4, 'Je suis Anne Frank: Partie 1', 'Un nouveau patient prétendant être Anne Frank expose le passé d''Arden. Kit apprend pourquoi Grace a été admise à Briarcliff.'),
+(7, 5, 'Je suis Anne Frank: partie 2', 'Sœur Jude déterre la terre sur Arden. Kit fait une confession surprenante. Bloody Face est démasqué.'),
+(7, 6, 'Les origines de la monstruosité', 'Une mystérieuse petite fille est abandonnée à Briarcliff. Le Monseigneur conclut un pacte faustien avec le Dr Arden. L''origine de Bloody Face est révélée.'),
+(7, 7, 'Cousin noir', 'Sœur Mary Eunice est terrifiée de découvrir qu''un ange noir est descendu sur Briarcliff. Kit fait un geste audacieux pour retrouver Grace.'),
+(7, 8, 'Nuit impie', 'Un Père Noël meurtrier fait des ravages dans l''asile. Sœur Jude affronte le diable. Arden a une rencontre choquante dans le Death Chute.'),
+(7, 9, 'Le porte-manteau', 'Le Monseigneur prend un converti improbable. Lana obtient une nouvelle preuve qui peut disculper Kit. Arden est témoin d''un retour miraculeux.'),
+(7, 10, 'Le nom du jeu', 'Le Monseigneur affronte le Diable. Les expériences d''Arden aboutissent à une conclusion choquante. Le Dr Thredson facilite une réunion surprenante pour Kit.'),
+(7, 11, 'Lait renversé', 'Grace apporte à Kit des nouvelles dévastatrices sur les expériences des extraterrestres sur Alma. Le Dr Thredson reçoit un visiteur inattendu. Le Monseigneur fait tout son possible pour faire taire Jude.'),
+(7, 12, 'Continuum', 'Un nouveau détenu mortel menace la chance de Sœur Jude d''être libérée de Briarcliff. L''obsession de Grace pour les extraterrestres devient violente.'),
+(7, 13, 'La folie se termine', 'Johnny entreprend d''achever le travail de son père. Lana mène la charge pour finalement arrêter Briarcliff.');
+
+#American horror story S03
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(8, 1, 'Bitchcraft', 'Après avoir découvert sa lignée unique, une jeune fille est emmenée dans une académie spéciale pour les filles qui partagent la même lignée.'),
+(8, 2, 'Pièces de garçon', 'Fiona menace une paix de longue date lorsqu''elle plonge dans le passé de Madame LaLaurie, tandis que Zoe et Madison doivent faire face à une horrible tragédie.'),
+(8, 3, 'Les remplaçants', 'Fiona prend un protégé improbable. Zoe, ravagée par la culpabilité, tente de redonner à Kyle son ancienne vie. Madison a un échange enflammé avec Joan Ramsey, une nouvelle voisine.'),
+(8, 4, 'Ensue de farces effrayantes', 'Les choix de Fiona secouent une trêve de plusieurs décennies entre les sorcières de Salem et Marie Laveau. Le Conseil de la sorcellerie rend une visite surprise à l''Académie avec des allégations inquiétantes.'),
+(8, 5, 'Brûle, sorcière. Brûler!', 'Zoe révèle un nouveau pouvoir lors du siège de l''armée zombie. Pendant ce temps, Fiona se venge de Myrtle lorsqu''une attaque laisse Cordelia aveuglée.'),
+(8, 6, 'L''homme à la hache arrive', 'Lorsque Zoe, Queenie et Nan utilisent un tableau ouija pour découvrir ce qui est arrivé à Madison, ils réveillent l''esprit d''un tueur en série mort depuis longtemps, l''homme à la hache.'),
+(8, 7, 'Le mort', 'Fiona trouve un nouveau but dans une dangereuse histoire d''amour. Une soirée avec LaLaurie amène Queenie à s''interroger sur sa place dans le Coven. Cordelia prend une décision fatidique au sujet de sa mère.'),
+(8, 8, 'La prise sacrée', 'Alors que Fiona a du mal à faire face aux effets de ses médicaments, le reste du clan entreprend un rituel connu sous le nom de «prise sacrée» pour se préparer au prochain suprême. Cependant, Fiona doit se suicider pour que le rituel réussisse.'),
+(8, 9, 'Tête', 'L''attaquant de Cordelia est révélé. Fiona cherche à former une alliance avec Marie Laveau. Nan apprend une vérité troublante sur le passé de Luke.'),
+(8, 10, 'Les délices magiques de Stevie Nicks', 'Fiona tente de sortir le nouveau Supreme avec la visite de Stevie Nicks. Cordelia apprend la vérité sur Hank et les chasseurs de sorcières. Madison essaie d''éliminer sa concurrence pour la Suprématie.'),
+(8, 11, 'Protégez le Coven', 'Fiona et Laveau ont une confrontation mortelle avec The Corporation. Cordelia fait un sacrifice désespéré pour protéger le Coven.'),
+(8, 12, 'Va au diable', 'La dernière vision de Cordelia met l''avenir du Coven en question. À l''approche de la fin du règne de Fiona, les filles manifestent de nouveaux dons puissants. La recherche de Queenie pour Marie Laveau la mène en enfer et retour.'),
+(8, 13, 'Les sept merveilles', 'Zoe, Madison, Misty et Queenie subissent le test des Sept Merveilles, sept défis magiques qui détermineront le prochain Suprême du clan.');
+
+
+
+#Fear the walking dead
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(14, 1, 'Pilot', 'Une famille recomposée hautement dysfonctionnelle est forcée de se regrouper lorsqu''elle réalise qu''un virus signalé est en fait le début de l''apocalypse des morts-vivants.'),
+(14, 2, 'Si proche et pourtant si loin', 'Alors que Madison lutte pour empêcher Nick d''un retrait paralysant, Travis s''aventure à la recherche de son fils avant que la ville de Los Angeles ne tombe.'),
+(14, 3, 'Le chien', 'Après avoir échappé à une émeute, Travis, Liza et Chris se réfugient chez les Salazars; Madison défend sa maison.'),
+(14, 4, 'Ne s''affaiblit pas', 'Madison et Travis voient les différents aspects de l''occupation de la Garde nationale dans leur quartier, la famille essaie de s''adapter au nouveau monde.'),
+(14, 5, 'Cobalt', 'Le plan de la Garde nationale pour le quartier est révélé; Travis et Madison prennent une décision difficile.'),
+(14, 6, 'Le bon homme', 'Avec les informations que Daniel a récupérées du garde qu''il a torturé, les trois familles tentent un sauvetage dangereux pour libérer Nick et Liza afin qu''ils puissent tous quitter la ville pour trouver la sécurité.');
