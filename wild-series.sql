@@ -147,3 +147,76 @@ INSERT INTO episode (season_id, number, title, synopsis) VALUES
 (14, 4, 'Ne s''affaiblit pas', 'Madison et Travis voient les différents aspects de l''occupation de la Garde nationale dans leur quartier, la famille essaie de s''adapter au nouveau monde.'),
 (14, 5, 'Cobalt', 'Le plan de la Garde nationale pour le quartier est révélé; Travis et Madison prennent une décision difficile.'),
 (14, 6, 'Le bon homme', 'Avec les informations que Daniel a récupérées du garde qu''il a torturé, les trois familles tentent un sauvetage dangereux pour libérer Nick et Liza afin qu''ils puissent tous quitter la ville pour trouver la sécurité.');
+
+
+#American horror story S04
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(9, 1, 'Monstres parmi nous', 'Après le meurtre de leur mère, les jumeaux siamois Bette et Dot sont embauchés par Elsa Mars, propriétaire de freak show en difficulté.'),
+(9, 2, 'Massacres et matinées', 'Avec un tueur en liberté, la police impose un couvre-feu à Jupiter. Elsa engage un homme fort, inconscient de son sombre passé avec Ethel.'),
+(9, 3, 'Edward Mordrake: Partie 1', 'Elsa défie la superstition pour répéter Halloween, invoquant l''esprit d''Edward Mordrake et son groupe fantomatique de monstres.'),
+(9, 4, 'Edward Mordrake: Partie 2', 'Mordrake cherche une âme bizarre à ajouter à sa troupe fantôme. Jimmy et Maggie ont une rencontre avec Twisty le clown.'),
+(9, 5, 'Petits gâteaux roses', 'Stanley prépare un plan pour enlever et tuer les Tattlers. Cependant, Elsa a son propre plan pour se débarrasser des sœurs. Pendant ce temps, Dandy sélectionne sa première victime.'),
+(9, 6, 'Bullseye', 'Elsa se prépare pour son émission de télévision en sortant un nouvel acte. Pendant ce temps, Paul poursuit la romance et les jumeaux s''installent dans leur nouvelle maison.'),
+(9, 7, 'Test de force', 'Après que Dell a attaqué l''un des leurs, les femmes du camp planifient leur revanche. Stanley tente de faire chanter l''un des monstres et Penny confronte son père.'),
+(9, 8, 'Bain de sang', 'Les monstres pleurent la mort de l''un des leurs, tandis qu''Elsa accueille un nouvel interprète. Penny et ses nouveaux amis se vengent de son père.'),
+(9, 9, 'Massacre de la fête de Tupperware', 'Jimmy se vautre dans l''apitoiement sur lui-même et Dandy entreprend de détruire l''homme qui l''a privé de ses jumeaux. Pendant ce temps, Desiree rencontre une vieille flamme, et Elsa et Stanley suivent les Tattlers.'),
+(9, 10, 'Orphelins', 'Un décès au camp pousse Elsa à chercher une nouvelle maison pour Pepper. Pendant ce temps, Desiree en a assez de l''échec de Dell en tant que mari, et Stanley donne un coup de main à Jimmy.'),
+(9, 11, 'Pensée magique', 'Un vendeur ambulant nommé Chester convainc Elsa de l''engager comme magicien pour le spectacle. Les jumeaux jettent leur dévolu sur le nouveau venu, tandis que Dell et Eve aident Jimmy à s''échapper.'),
+(9, 12, 'Afficher les bouchons', 'Les monstres exigent la justice poétique après avoir appris les péchés de Stanley. Maggie essaie de faire amende honorable avec Jimmy, et Dandy donne aux Tattlers des informations troublantes sur Chester.'),
+(9, 13, 'Rappel', 'Dandy se prépare pour sa première performance. Les Tattlers envisagent le mariage, tandis qu''à Hollywood, Elsa découvre qu''elle est plus que jamais amoureuse.');
+
+#Love Death And Robots S1
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(10, 1, 'Les bords de Sonnie', 'Dans le monde souterrain des combats de "bestioles", Sonnie est imbattable - tant qu''elle garde son avantage.'),
+(10, 2, 'Trois robots', 'Longtemps après la chute de l''humanité, trois robots se lancent dans une visite touristique d''une ville post-apocalyptique.'),
+(10, 3, 'Le témoin', 'Après avoir assisté à un meurtre brutal, une femme fuit le tueur dans les rues d''une ville surréaliste.'),
+(10, 4, 'Costume', 'Une communauté d''agriculteurs utilise leurs mechs maison pour défendre leurs familles d''une invasion extraterrestre'),
+(10, 5, 'Sucker of Souls', 'Libéré par une fouille archéologique, un démon assoiffé de sang combat une équipe de mercenaires armés de ... chats?'),
+(10, 6, 'Quand le yogourt a pris le dessus', 'Après que des scientifiques aient accidentellement créé du yogourt super intelligent, il a rapidement faim de domination mondiale.'),
+(10, 7, 'Au-delà de la faille Aquila', 'En se réveillant après avoir voyagé à des années-lumière, l''équipage d''un navire a du mal à découvrir jusqu''où il est venu.'),
+(10, 8, 'Bonne chasse', 'Le fils d''un chasseur d''esprit forge un lien avec un huli jing qui change de forme.'),
+(10, 9, 'La déchetterie', 'Ugly Dave appelle le dépotoir à la maison, et il n''est pas sur le point de laisser un citadin le lui enlever.'),
+(10, 10, 'Changements de forme', 'Profondément en Afghanistan, deux Marines aux pouvoirs surnaturels font face à une menace de l''un des leurs.'),
+(10, 11, 'Coup de main', 'Echouée en orbite, une astronaute doit choisir entre la vie et l''intégrité physique avant que son oxygène ne s''épuise.'),
+(10, 12, 'Nuit de poisson', 'Après que leur voiture tombe en panne dans le désert, deux vendeurs entreprennent un voyage onirique à l''aube des temps.'),
+(10, 13, 'Lucky 13', 'Après que le drop-ship Lucky 13 ait perdu deux équipages, aucun pilote ne le piloterait ... mais les recrues n''ont pas le choix.'),
+(10, 14, 'Bleu Zima', 'L''artiste renommé Zima raconte son passé mystérieux et sa notoriété avant de dévoiler son œuvre finale.'),
+(10, 15, 'Angle mort', 'Une bande de voleurs cyborg met en scène un braquage à grande vitesse d''un convoi lourdement blindé.'),
+(10, 16, 'Âge de glace', 'Un jeune couple emménage dans un appartement et trouve une civilisation perdue dans leur ancien congélateur.'),
+(10, 17, 'Histoires alternatives', 'Vous voulez voir Hitler mourir de différentes manières comiques et fantastiques? Maintenant vous pouvez. Bienvenue chez Multiversity!'),
+(10, 18, 'La guerre secrète', 'Les unités d''élite de l''Armée rouge combattent un mal impie dans les anciennes forêts de Sibérie.');
+
+#Penny Dreadful S1
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(11, 1, 'Travail de nuit', 'Londres 1891. Le célèbre explorateur Sir Malcolm Murray et l''étrange beauté Vanessa Ives recrutent le tireur de précision américain Ethan Chandler et le Dr Victor Frankenstein pour les aider à rechercher quelqu''un qui a été perdu.'),
+(11, 2, 'Séance', 'Vanessa et Sir Malcolm rencontrent la mystérieusement belle Dorian Gray lors d''une fête. Les choses changent cependant lorsque la médium renommée Madame Kali organise une séance. Pendant ce temps, Ethan se lie d''amitié avec Mme Brona Croft, une jeune immigrante irlandaise.'),
+(11, 3, 'Résurrection', 'Le Dr Frankenstein est confronté à son passé. Vanessa a une vision de Mina, qui mène à une étrange découverte au zoo de Londres.'),
+(11, 4, 'Demi-monde', 'L''engouement de Vanessa pour Dorian Gray grandit. Le professeur Van Helsing est embauché pour travailler avec le Dr Frankenstein. Fenton attire son maître dans le manoir de Sir Malcolm.'),
+(11, 5, 'Plus proche que les sœurs', 'Vanessa se souvient de son passé et des événements qui ont finalement conduit à la disparition de Mina.'),
+(11, 6, 'Ce que la mort peut joindre', 'La dernière vision de Vanessa conduit Sir Malcolm, Ethan et Sembene à une recherche. Le professeur Van Helsing révèle plus de détails au Dr Frankenstein sur qui a pris Mina.'),
+(11, 7, 'Possession', 'Au cours de quatre semaines pénibles, Sir Malcolm, Ethan, le Dr Frankenstein et Sembene font tout ce qu''ils peuvent pour sauver Vanessa de ce qui est en elle.'),
+(11, 8, 'Grand Guignol', 'Après une vision du Grand Guignol, Vanessa, Sir Malcolm, Ethan, le Dr Frankenstein et Sembene explorent un théâtre vide - pour être confrontés à leurs pires cauchemars.');
+
+#Penny Dreadful S2
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(12, 1, 'Enfer frais', 'Sir Malcolm revient pour trouver une nouvelle Vanessa chassant le mal.'),
+(12, 2, 'Verbis Diablo', 'Une Vanessa hantée se tourne vers Sir Malcolm pour se réconforter. Pendant ce temps, Dorian Gray rencontre une femme intrigante avec un secret, Hecate cherche un prix pour sa mère - et Ferdinand Lyle révèle la trame de fond inquiétante du Verbis Diablo.'),
+(12, 3, 'Les Nightcomers', 'Dans un flashback, Vanessa rencontre The Cut-Wife, qui réalise rapidement l''étendue des pouvoirs de Vanessa et la met en garde contre le danger qui l''attend - et le mal qui la poursuit.'),
+(12, 4, 'Les mauvais esprits dans les lieux célestes', 'Lyle révèle comment l''histoire du Verbis Diablo affecte Vanessa. Pendant ce temps, Hecate essaie de se rapprocher d''Ethan; La romance d''Angélique et Dorian grandit; et l''inspecteur Rusk interroge l''unique survivant du massacre de Mariner''s Inn.'),
+(12, 5, 'Au-dessus du ciel voûté', 'Vanessa, Ethan et Sir Malcolm protègent le manoir d''une autre attaque. Pendant ce temps, Angélique est humiliée lors d''une sortie avec Dorian et, alors qu''Evelyn travaille sur un nouveau totem, Hecate retourne à sa mère avec un cadeau'),
+(12, 6, 'Horreurs glorieuses', 'Sir Malcolm reçoit des nouvelles tragiques. Roper traque Ethan. Dorian organise un somptueux bal en l''honneur d''Angélique. Et une nuit glorieuse se transforme en horreur pour Vanessa.'),
+(12, 7, 'Petit Scorpion', 'Vanessa et Ethan fuient Londres pour le cottage de Cut-Wife; une figure du passé refait surface.'),
+(12, 8, 'Memento Mori', 'La créature déchaîne sa rage; Sir Malcolm affronte Evelyn.'),
+(12, 9, 'Et l''enfer est mon seul ennemi', 'Vanessa va seule combattre Evelyn afin de sauver Sir Malcolm.'),
+(12, 10, 'Et ils étaient des ennemis', 'Vanessa doit compter sur sa force pour vaincre le démon.');
+#Penny Dreadful S3
+INSERT INTO episode (season_id, number, title, synopsis) VALUES
+(13, 1, 'Le jour où Tennyson est mort', 'Avec Ethan, Sir Malcolm et le Dr Frankenstein maintenant dispersés à travers le monde face à leurs propres démons, Vanessa brisée et découragée demande l''aide du Dr Seward pour combattre un nouveau mal.'),
+(13, 2, 'Prédateurs éloignés et proches', 'Sir Malcolm continue son voyage avec l''énigmatique Kaetenay. Pendant ce temps, Ethan reçoit une aide inattendue de Hecate, Drs. Frankenstein et Jekyll élaborent un plan et à son insu, les forces du mal suivent chaque mouvement de Vanessa.'),
+(13, 3, 'Good and Evil Braided Be', 'Vanessa Ives est confrontée à un visage familier qui révélera un indice sur son passé.'),
+(13, 4, 'Un brin d''herbe', 'Avec l''aide du Dr Seward, Vanessa subit une hypnose pour revivre son séjour à la clinique d''interdiction.'),
+(13, 5, 'Ce monde est notre enfer', 'Traqué à travers le désert par Kaetenay et d''autres, Ethan fait face à un jugement. À Londres, Victor apporte une modification dramatique au remède de Jekyll à la folie.'),
+(13, 6, 'Aucune bête si féroce', 'Vanessa contacte son vieil ami Ferdinand Lyle pour obtenir de l''aide. Lyle la présente à Catriona Hartdegen. Lily, Dorian et Justine ont mis leur plan en marche. Ethan, Sir Malcolm et Hecate arrivent au ranch de Talbot.'),
+(13, 7, 'Marée descendante', 'Lily envoie sa légion de femmes dans une mission horrible, Vanessa fait un choix inquiétant et les visions de Kaetenay conduisent Ethan vers son destin.'),
+(13, 8, 'Nuit perpétuelle', 'Alors qu''une peste apocalyptique enveloppe Londres, Victor décide du sort de Lily et Ethan se retrouve face à face avec le mal qui séduit Vanessa.'),
+(13, 9, 'L''obscurité bénie', 'Sir Malcolm et ses alliés combattent le démon qui revendique Vanessa, la créature fait face à une demande funeste et Ethan fait un choix déchirant.');
