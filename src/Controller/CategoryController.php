@@ -4,7 +4,10 @@ namespace App\Controller;
 
 use App\Entity\Category;
 use App\Entity\Program;
+use App\Form\CategoryType;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -29,10 +32,33 @@ class CategoryController extends AbstractController
     }
 
     /**
+     * The controller for the category add form
+     *
+     * @Route("/new", name="new")
+     * @param EntityManagerInterface $entityManager
+     * @param Request $request
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     */
+    public function new(EntityManagerInterface $entityManager,Request $request) : Response
+    {
+        $category = new Category();
+        $form = $this->createForm(CategoryType::class, $category);
+        $form->handleRequest($request);
+        if ($form->isSubmitted()) {
+            $entityManager->persist($category);
+            $entityManager->flush();
+            return $this->redirectToRoute('category_index');
+        }
+        return $this->render('category/new.html.twig', [
+            "form" => $form->createView(),
+        ]);
+    }
+
+    /**
      * @Route(
      *     "/{categoryName}",
      *     name="show",
-     *     requirements={"categoryName"="^[a-z]+$"},
+     *     requirements={"categoryName"="^[a-zé]+$"},
      *     methods={"GET"}
      *     )
      * @param string $categoryName
