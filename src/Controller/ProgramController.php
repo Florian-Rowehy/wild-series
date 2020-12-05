@@ -97,6 +97,29 @@ class ProgramController extends AbstractController
 
     /**
      * @route(
+     *     "/{id}/edit",
+     *     name="edit",
+     *     requirements={"id"="^\d+$"},
+     *     methods={"GET", "POST"}
+     *     )
+     */
+    public function edit(Program $program, Request $request, EntityManagerInterface $entityManager): Response
+    {
+        $form = $this->createForm(ProgramType::class, $program);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager->persist($program);
+            $entityManager->flush();
+            return $this->redirectToRoute("program_show", ["id" => $program->getId()]);
+        }
+        return $this->render('program/new.html.twig', [
+            "form" => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @route(
      *     "/{id}",
      *     name="show",
      *     requirements={"id"="^\d+$"},
