@@ -220,3 +220,11 @@ INSERT INTO episode (season_id, number, title, synopsis) VALUES
 (13, 7, 'Marée descendante', 'Lily envoie sa légion de femmes dans une mission horrible, Vanessa fait un choix inquiétant et les visions de Kaetenay conduisent Ethan vers son destin.'),
 (13, 8, 'Nuit perpétuelle', 'Alors qu''une peste apocalyptique enveloppe Londres, Victor décide du sort de Lily et Ethan se retrouve face à face avec le mal qui séduit Vanessa.'),
 (13, 9, 'L''obscurité bénie', 'Sir Malcolm et ses alliés combattent le démon qui revendique Vanessa, la créature fait face à une demande funeste et Ethan fait un choix déchirant.');
+
+#association acteur/series
+INSERT INTO actor_program VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(1, 6);
