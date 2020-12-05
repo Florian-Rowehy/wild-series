@@ -29,12 +29,6 @@ class ProgramController extends AbstractController
             ->getRepository(Program::class)
             ->findAll();
 
-        if (!$programs) {
-            throw $this->createNotFoundException(
-                'No program found in program\'s table.'
-            );
-        }
-
         return $this->render('program/index.html.twig', [
             'programs' => $programs,
         ]);
@@ -46,9 +40,6 @@ class ProgramController extends AbstractController
      *     name="new",
      *     methods={"GET", "POST"}
      * )
-     * @param EntityManagerInterface $entityManager
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
      */
     public function new(EntityManagerInterface $entityManager, Request $request)
     {
@@ -75,10 +66,6 @@ class ProgramController extends AbstractController
      * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programId": "id"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeId": "id"}})
-     * @param Program $program
-     * @param Season $season
-     * @param Episode $episode
-     * @return Response
      */
     public function  showEpisode(Program $program, Season $season, Episode $episode): Response
     {
@@ -96,22 +83,9 @@ class ProgramController extends AbstractController
      *     requirements={"program"="^\d+$", "season"="^\d+$"},
      *     methods={"GET"},
      *     )
-     * @param Program $program
-     * @param Season $season
-     * @return Response
      */
     public function showSeason(Program $program, Season $season): Response
     {
-        if (!$program) {
-            throw $this->createNotFoundException(
-                'No program with corresponding id, found in program\'s table.'
-            );
-        }
-        if (!$season) {
-            throw $this->createNotFoundException(
-                'No season with corresponding id found in season\'s table.'
-            );
-        }
         $episodes = $season->getEpisodes();
 
         return $this->render('program/season_show.html.twig', [
@@ -128,20 +102,11 @@ class ProgramController extends AbstractController
      *     requirements={"id"="^\d+$"},
      *     methods={"GET"}
      *     )
-     * @param Program $program
-     * @return Response
      */
     public function show(Program $program): Response
     {
-        if (!$program) {
-            throw $this->createNotFoundException(
-                'No program with corresponding id, found in program\'s table.'
-            );
-        }
-        $seasons = $program->getSeasons();
         return $this->render('program/show.html.twig', [
             'program' => $program,
-            'seasons' => $seasons,
         ]);
     }
 }
