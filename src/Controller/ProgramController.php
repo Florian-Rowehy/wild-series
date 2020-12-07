@@ -40,16 +40,24 @@ class ProgramController extends AbstractController
      *     name="new",
      *     methods={"GET", "POST"}
      * )
+     * @route(
+     *     "/{id}/edit",
+     *     name="edit",
+     *     requirements={"id"="^\d+$"},
+     *     methods={"GET", "POST"}
+     * )
      */
-    public function new(EntityManagerInterface $entityManager, Request $request)
+    public function form(Program $program = null, EntityManagerInterface $entityManager, Request $request): Response
     {
-        $program = new Program();
+        if (!$program)
+            $program = new Program();
+
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->persist($program);
             $entityManager->flush();
-            return $this->redirectToRoute("program_index");
+            return $this->redirectToRoute("program_show", ["id" => $program->getId()]);
         }
         return $this->render('program/new.html.twig', [
             "form" => $form->createView(),
@@ -82,7 +90,7 @@ class ProgramController extends AbstractController
      *     name="season_show",
      *     requirements={"program"="^\d+$", "season"="^\d+$"},
      *     methods={"GET"},
-     *     )
+     * )
      */
     public function showSeason(Program $program, Season $season): Response
     {
@@ -92,29 +100,6 @@ class ProgramController extends AbstractController
             'program' => $program,
             'season' => $season,
             'episodes' => $episodes,
-        ]);
-    }
-
-    /**
-     * @route(
-     *     "/{id}/edit",
-     *     name="edit",
-     *     requirements={"id"="^\d+$"},
-     *     methods={"GET", "POST"}
-     *     )
-     */
-    public function edit(Program $program, Request $request, EntityManagerInterface $entityManager): Response
-    {
-        $form = $this->createForm(ProgramType::class, $program);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($program);
-            $entityManager->flush();
-            return $this->redirectToRoute("program_show", ["id" => $program->getId()]);
-        }
-        return $this->render('program/new.html.twig', [
-            "form" => $form->createView(),
         ]);
     }
 
