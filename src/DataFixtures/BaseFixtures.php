@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
@@ -10,11 +11,17 @@ abstract class BaseFixtures extends Fixture
     private $manager;
     protected $faker;
     private $referencesIndex  = [];
+    protected $slugify;
+
+    public function __construct(Slugify $slugify)
+    {
+        $this->slugify = $slugify;
+        $this->faker = \Faker\Factory::create('en_US');
+    }
 
     public function load(ObjectManager $manager)
     {
         $this->manager = $manager;
-        $this->faker = \Faker\Factory::create('en_US');
     }
 
     protected function createMany(string $className, int $n, callable  $factory, ?int $ref=null )

@@ -3,10 +3,9 @@
 namespace App\DataFixtures;
 
 use App\Entity\Program;
-use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class ProgramFixtures extends Fixture
+class ProgramFixtures extends BaseFixtures
 {
     const PROGRAMS = [
         'Walking Dead' => [
@@ -52,6 +51,7 @@ class ProgramFixtures extends Fixture
                 ->setSummary($programArr['summary'])
                 ->setPoster($programArr['poster'])
                 ->setCategory($this->getReference($category))
+                ->setSlug($this->slugify->generate($title))
             ;
             $this->addReference('program_'.$i, $program);
             $manager->persist($program);
