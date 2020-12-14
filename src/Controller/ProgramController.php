@@ -7,6 +7,7 @@ use App\Entity\Program;
 use App\Entity\Season;
 use App\Form\ProgramType;
 use App\Repository\ProgramRepository;
+use App\Service\Slugify;
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
@@ -41,13 +42,13 @@ class ProgramController extends AbstractController
      *     methods={"GET", "POST"}
      * )
      * @route(
-     *     "/{id}/edit",
+     *     "/{programSlug}/edit",
      *     name="edit",
-     *     requirements={"id"="^\d+$"},
+     *     requirements={"programSlug"="^[a-z-]+$"},
      *     methods={"GET", "POST"}
      * )
      */
-    public function form(Program $program = null, EntityManagerInterface $entityManager, Request $request): Response
+    public function form(Program $program = null, EntityManagerInterface $entityManager, Request $request, Slugify $slugify): Response
     {
         if (!$program)
             $program = new Program();
@@ -55,6 +56,8 @@ class ProgramController extends AbstractController
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
             $entityManager->persist($program);
             $entityManager->flush();
             return $this->redirectToRoute("program_show", ["id" => $program->getId()]);
@@ -66,12 +69,12 @@ class ProgramController extends AbstractController
 
     /**
      * @Route(
-     *     "/programs/{programId}/seasons/{seasonId}/episodes/{episodeId}",
+     *     "/programs/{programSlug}/seasons/{seasonId}/episodes/{episodeId}",
      *     name="episode_show",
-     *     requirements={"programId"="^\d+$", "seasonId"="^\d+$", "episodeId"="^\d+$"},
+     *     requirements={"programSlug"="^[a-z-]+$", "seasonId"="^\d+$", "episodeId"="^\d+$"},
      *     methods={"GET"}
      * )
-     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programId": "id"}})
+     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programSlug": "slug"}})
      * @ParamConverter("season", class="App\Entity\Season", options={"mapping": {"seasonId": "id"}})
      * @ParamConverter("episode", class="App\Entity\Episode", options={"mapping": {"episodeId": "id"}})
      */
@@ -86,11 +89,12 @@ class ProgramController extends AbstractController
 
     /**
      * @Route(
-     *     "/programs/{program}/seasons/{season}",
+     *     "/programs/{programSlug}/seasons/{season}",
      *     name="season_show",
-     *     requirements={"program"="^\d+$", "season"="^\d+$"},
+     *     requirements={"programSlug"="^[a-z-]+$", "season"="^\d+$"},
      *     methods={"GET"},
      * )
+     * @ParamConverter("program", class="App\Entity\Program", options={"mapping": {"programSlug": "slug"}})
      */
     public function showSeason(Program $program, Season $season): Response
     {
@@ -105,9 +109,9 @@ class ProgramController extends AbstractController
 
     /**
      * @route(
-     *     "/{id}",
+     *     "/{slug}",
      *     name="show",
-     *     requirements={"id"="^\d+$"},
+     *     requirements={"slug"="^[a-z-]+$"},
      *     methods={"GET"}
      *     )
      */
