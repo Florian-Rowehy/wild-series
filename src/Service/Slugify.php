@@ -11,6 +11,7 @@ class Slugify
         $slug = strtolower($slug);
         $slug = preg_replace("/[^a-z0-9 \-_']+/", "", $slug);
         $slug = preg_replace("/[ \-_']+/", "-", $slug);
+        $slug = trim($slug, '-');
         return $slug;
     }
 
