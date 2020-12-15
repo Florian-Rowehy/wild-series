@@ -1,0 +1,11 @@
+{% extends 'layoutEmail.html.twig' %}
+
+{% block title %}
+    New Episode
+{% endblock %}
+
+{% block body %}
+    <h1>New episode of {{ episode.season.program.title }} created</h1>
+    <p>Hello, the new episode {{ episode.title }} is out on Wild Series</p>
+    <p>Summary : {{episode.synopsis }}
+{% endblock %}
