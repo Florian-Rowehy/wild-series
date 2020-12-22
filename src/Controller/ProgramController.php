@@ -43,21 +43,10 @@ class ProgramController extends AbstractController
      *     name="new",
      *     methods={"GET", "POST"}
      * )
-     * @route(
-     *     "/{programSlug}/edit",
-     *     name="edit",
-     *     requirements={"programSlug"="^[a-z-]+$"},
-     *     methods={"GET", "POST"}
-     * )
      */
-    public function form(Program $program = null, EntityManagerInterface $entityManager, Request $request, Slugify $slugify, MailerInterface $mailer): Response
+    public function new(EntityManagerInterface $entityManager, Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
-        $shouldSendMail = false;
-        if (!$program) {
-            $program = new Program();
-            $shouldSendMail = true;
-        }
-
+        $program = new Program();
         $form = $this->createForm(ProgramType::class, $program);
         $form->handleRequest($request);
 
@@ -67,14 +56,40 @@ class ProgramController extends AbstractController
             $entityManager->persist($program);
             $entityManager->flush();
 
-            if ($shouldSendMail) {
-                $email = (new Email())
-                    ->from($this->getParameter('mailer_from'))
-                    ->to('your_email@example.com')
-                    ->subject('Une nouvelle série vient d\'être publiée !')
-                    ->html($this->renderView('Program/newProgramEmail.html.twig', ['program' => $program]));
-                $mailer->send($email);
-            }
+            $email = (new Email())
+                ->from($this->getParameter('mailer_from'))
+                ->to('your_email@example.com')
+                ->subject('Une nouvelle série vient d\'être publiée !')
+                ->html($this->renderView('Program/newProgramEmail.html.twig', ['program' => $program]));
+            $mailer->send($email);
+
+            return $this->redirectToRoute("program_show", ["slug" => $slug]);
+        }
+
+        return $this->render('program/new.html.twig', [
+            "form" => $form->createView(),
+        ]);
+    }
+
+    /**
+     * @route(
+     *     "/{programSlug}/edit",
+     *     name="edit",
+     *     requirements={"programSlug"="^[a-z-]+$"},
+     *     methods={"GET", "POST"}
+     * )
+     * @ParamConverter("program", class=Program::class, options={"mapping": {"programSlug": "slug"}})
+     */
+    public function edit(Program $program, EntityManagerInterface $entityManager, Request $request, Slugify $slugify): Response
+    {
+        $form = $this->createForm(ProgramType::class, $program);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $slug = $slugify->generate($program->getTitle());
+            $program->setSlug($slug);
+            $entityManager->persist($program);
+            $entityManager->flush();
 
             return $this->redirectToRoute("program_show", ["slug" => $slug]);
         }
