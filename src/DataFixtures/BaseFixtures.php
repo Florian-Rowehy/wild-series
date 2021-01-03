@@ -5,6 +5,7 @@ namespace App\DataFixtures;
 use App\Service\Slugify;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 abstract class BaseFixtures extends Fixture
 {
@@ -12,11 +13,13 @@ abstract class BaseFixtures extends Fixture
     protected $faker;
     private $referencesIndex  = [];
     protected $slugify;
+    protected $passwordEncoder;
 
-    public function __construct(Slugify $slugify)
+    public function __construct(Slugify $slugify, UserPasswordEncoderInterface $passwordEncoder)
     {
         $this->slugify = $slugify;
         $this->faker = \Faker\Factory::create('en_US');
+        $this->passwordEncoder = $passwordEncoder;
     }
 
     public function load(ObjectManager $manager)
@@ -24,7 +27,7 @@ abstract class BaseFixtures extends Fixture
         $this->manager = $manager;
     }
 
-    protected function createMany(string $className, int $n, callable  $factory, ?int $ref=null )
+    protected function createMany(string $className, int $n, callable  $factory, $ref=null )
     {
         for ($i=0; $i<$n; $i++) {
             $entity = new $className();
