@@ -47,7 +47,10 @@ class ProgramController extends AbstractController
     public function new(EntityManagerInterface $entityManager, Request $request, Slugify $slugify, MailerInterface $mailer): Response
     {
         $program = new Program();
-        $form = $this->createForm(ProgramType::class, $program);
+        $form = $this->createForm(ProgramType::class, $program, [
+            'action' => $this->generateUrl('program_new'),
+            'method' => 'POST',
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -76,13 +79,16 @@ class ProgramController extends AbstractController
      *     "/{programSlug}/edit",
      *     name="edit",
      *     requirements={"programSlug"="^[a-z-]+$"},
-     *     methods={"GET", "POST"}
+     *     methods={"GET", "PUT"}
      * )
      * @ParamConverter("program", class=Program::class, options={"mapping": {"programSlug": "slug"}})
      */
     public function edit(Program $program, EntityManagerInterface $entityManager, Request $request, Slugify $slugify): Response
     {
-        $form = $this->createForm(ProgramType::class, $program);
+        $form = $this->createForm(ProgramType::class, $program, [
+            'action' => $this->generateUrl('program_edit', ['programSlug'=> $program->getSlug()]),
+            'method' => 'PUT',
+        ]);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
