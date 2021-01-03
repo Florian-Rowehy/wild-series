@@ -3,9 +3,10 @@
 namespace App\DataFixtures;
 
 use App\Entity\Program;
+use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
-class ProgramFixtures extends BaseFixtures
+class ProgramFixtures extends BaseFixtures implements DependentFixtureInterface
 {
     const PROGRAMS = [
         'Walking Dead' => [
@@ -59,5 +60,10 @@ class ProgramFixtures extends BaseFixtures
         }
 
         $manager->flush();
+    }
+
+    public function getDependencies()
+    {
+        return [CategoryFixtures::class];
     }
 }
