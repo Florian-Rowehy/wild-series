@@ -4,12 +4,16 @@
 
 {% block body %}
     <h1>Episode</h1>
+    <a href="{{ path('episode_edit', {'id': episode.id}) }}">edit</a>
 
     <table class="table">
         <tbody>
             <tr>
                 <th>Série</th>
-                <td>{{ episode.season.program.title }}</td>
+                <td>
+                    {{ episode.season.program.title }}
+                    {{ include('episode/_delete_form.html.twig') }}
+                </td>
             </tr>
             <tr>
                 <th>Saison</th>
@@ -36,7 +40,19 @@
 
     <a href="{{ path('episode_index') }}">back to list</a>
 
-    <a href="{{ path('episode_edit', {'id': episode.id}) }}">edit</a>
+    <div class="my-4">
+        {% if app.user  %}
+            {% include "episode/_form-comment.html.twig" %}
+        {% endif %}
+        {% for comment in episode.comments %}
+            <div class="m-4 border">
+                <p class="m-1">Rating: {{ comment.rate }}</p>
+                <p class="m-1">{{ comment.comment }}</p>
+                <p class="m-1">{{ comment.author.username }}</p>
+            </div>
+        {% else %}
+            <p>Il n'y a pas de commentaire.</p>
+        {% endfor %}
+    </div>
 
-    {{ include('episode/_delete_form.html.twig') }}
 {% endblock %}
