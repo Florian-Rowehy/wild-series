@@ -56,12 +56,12 @@ class Comment
         return $this;
     }
 
-    public function getComment(): ?int
+    public function getComment(): ?string
     {
         return $this->comment;
     }
 
-    public function setComment(int $comment): self
+    public function setComment(string $comment): self
     {
         $this->comment = $comment;
 
