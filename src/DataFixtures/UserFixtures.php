@@ -12,17 +12,19 @@ class UserFixtures extends BaseFixtures
         parent::load($manager);
         $this->createMany(User::class, 15, function (User $user, int $i){
             $user
+                ->setUsername($this->faker->userName)
                 ->setEmail($this->faker->email)
                 ->setRoles(['ROLE_CONTRIBUTOR'])
                 ->setPassword($this->passwordEncoder->encodePassword(
                     $user,
-                    'contributorpassword'
+                    'userpassword'
                 ));
             ;
         }, 'contributor');
 
         $this->createMany(User::class, 4, function (User $user, int $i){
             $user
+                ->setUsername($this->faker->userName)
                 ->setEmail($this->faker->safeEmail)
                 ->setRoles(['ROLE_ADMIN'])
                 ->setPassword($this->passwordEncoder->encodePassword(
