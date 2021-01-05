@@ -6,3 +6,26 @@
   max-width: 50%;
   height: auto
 }
+
+.ac-results {
+  border: 1px solid #2f2f2f;
+  background-color: $primary;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  top: 59px!important;
+  width: 250px!important;
+  position: fixed!important;
+
+  z-index: 9;
+
+  li {
+    border-top: 1px solid #2f2f2f;
+    cursor: pointer;
+    display: block;
+    font-size: 14px;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+  }
+}

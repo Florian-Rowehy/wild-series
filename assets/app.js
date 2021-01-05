@@ -10,6 +10,7 @@
 //import $ from 'jquery';
 const $ = require('jquery');
 require('bootstrap');
+require('./js/header-autocomplete.js');
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
