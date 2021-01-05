@@ -17,6 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
 /**
  * @Route("/programs", name="program_")
@@ -55,7 +56,9 @@ class ProgramController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $slug = $slugify->generate($program->getTitle());
-            $program->setSlug($slug);
+            $program
+                ->setSlug($slug)
+                ->setCreator($this->getUser());
             $entityManager->persist($program);
             $entityManager->flush();
 
@@ -85,6 +88,10 @@ class ProgramController extends AbstractController
      */
     public function edit(Program $program, EntityManagerInterface $entityManager, Request $request, Slugify $slugify): Response
     {
+        if (!($this->getUser() == $program->getCreator())) {
+            // If not the owner, throws a 403 Access Denied exception
+            throw new AccessDeniedException('Only the owner can edit the program!');
+        }
         $form = $this->createForm(ProgramType::class, $program, [
             'action' => $this->generateUrl('program_edit', ['programSlug'=> $program->getSlug()]),
             'method' => 'PUT',
@@ -158,5 +165,18 @@ class ProgramController extends AbstractController
         return $this->render('program/show.html.twig', [
             'program' => $program,
         ]);
+    }
+
+    /**
+     * @Route(
+     *     "/search/{title}",
+     *     name="search_program_autocomplete",
+     *     methods={"GET"}
+     * )
+     */
+    public function autoCompleteSearchBar(ProgramRepository $programRepository, string $title)
+    {
+        $programs = $programRepository->findByInput($title);
+        return $this->json($programs, 200);
     }
 }
