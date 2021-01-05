@@ -63,7 +63,7 @@ class ProgramRepository extends ServiceEntityRepository
     public function findByInput(string $input)
     {
         return $this->createQueryBuilder('p')
-            ->select('p.title')
+            //>select('p.title, p.poster, p.slug')
             ->where('p.title LIKE :input')
             ->setParameter('input', '%'.$input.'%')
             ->getQuery()

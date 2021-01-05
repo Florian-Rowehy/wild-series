@@ -18,6 +18,8 @@ use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
+use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Serializer\SerializerInterface;
 
 /**
  * @Route("/programs", name="program_")
@@ -174,9 +176,11 @@ class ProgramController extends AbstractController
      *     methods={"GET"}
      * )
      */
-    public function autoCompleteSearchBar(ProgramRepository $programRepository, string $title)
+    public function autoCompleteSearchBar(ProgramRepository $programRepository, SerializerInterface $serializer, string $title)
     {
         $programs = $programRepository->findByInput($title);
-        return $this->json($programs, 200);
+        $jsonObject = $serializer->serialize($programs, 'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['category', 'seasons', 'actors', 'creator']]);
+
+        return new Response($jsonObject, 200, ['Content-Type' => 'application/json']);
     }
 }

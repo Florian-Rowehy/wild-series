@@ -17,7 +17,10 @@ searchBar.addEventListener('input', (event)=>{
                 listFoundFilms.replaceChildren(
                     ...programs.map(program => {
                         const li = document.createElement('li');
-                        li.textContent = program.title;
+                        const anchor = document.createElement('a');
+                        anchor.href = '/programs/' + program.slug;
+                        anchor.textContent = program.title;
+                        li.append(anchor);
                         return li;
                     })
                 );
