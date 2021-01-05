@@ -7,6 +7,9 @@
     {% for program in programs %}
         <div>
             <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            {% if is_granted("ROLE_ADMIN") %}
+                <a href="{{ path('program_edit', { 'programSlug': program.slug} ) }}">Éditer</a>
+            {%endif%}
             <p>{{ program.summary }}</p>
             {# Lien vers la fiche de la série : #}
             <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
