@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\SearchProgramType;
 use App\Repository\CategoryRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -22,6 +23,14 @@ class DefaultController extends AbstractController
     {
         return $this->render('layout/navbartop.html.twig', [
             'categories' => $categoryRepository->findAll()
+        ]);
+    }
+
+    public function navbarSearch(): Response
+    {
+        $form = $this->createForm(SearchProgramType::class);
+        return $this->render('layout/searchbar.html.twig', [
+            'searchForm' => $form->createView()
         ]);
     }
 

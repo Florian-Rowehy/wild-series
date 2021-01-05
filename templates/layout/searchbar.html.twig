@@ -1,0 +1,22 @@
+{{
+    form_start(searchForm, {
+        'attr': {'class': 'form-inline my-2 my-lg-0 position-relative'},
+        'method': 'POST',
+        'action': path('program_index')
+    })
+}}
+    {{
+        form_widget(searchForm.search, {
+            'attr': {
+                'class': 'form-control mr-sm-2',
+                'placeholder': 'search',
+                'aria-label': 'Search',
+                'autocomplete': 'off'
+            },
+            'id': 'searchBar'
+        })
+    }}
+    <button class="btn btn-outline-success my-2 my-sm-0">Search</button>
+    <ul id="listFoundFilms" class="ac-results d-none">
+    </ul>
+{{ form_end(searchForm) }}

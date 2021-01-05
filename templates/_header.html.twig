@@ -34,12 +34,7 @@
                 </li>
 
             </ul>
-            <form class="form-inline my-2 my-lg-0 position-relative">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="searchBar">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                <ul id="listFoundFilms" class="ac-results d-none">
-                </ul>
-            </form>
+            {{ render(controller('App\\Controller\\DefaultController::navbarSearch')) }}
         </div>
     </nav>
 </header>
