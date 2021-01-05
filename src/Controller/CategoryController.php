@@ -6,6 +6,7 @@ use App\Entity\Category;
 use App\Entity\Program;
 use App\Form\CategoryType;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -32,12 +33,8 @@ class CategoryController extends AbstractController
     }
 
     /**
-     * The controller for the category add form
-     *
      * @Route("/new", name="new")
-     * @param EntityManagerInterface $entityManager
-     * @param Request $request
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse|Response
+     * @IsGranted("ROLE_ADMIN")
      */
     public function new(EntityManagerInterface $entityManager,Request $request) : Response
     {
@@ -61,7 +58,6 @@ class CategoryController extends AbstractController
      *     requirements={"categoryName"="^[a-zé]+$"},
      *     methods={"GET"}
      *     )
-     * @param string $categoryName
      */
     public function show(string $categoryName): Response
     {
