@@ -12,11 +12,10 @@
   background-color: $primary;
   margin: 0;
   overflow: hidden;
-  padding: 0;
-  top: 59px!important;
-  width: 250px!important;
-  position: fixed!important;
-
+  padding: 0 10px;
+  top: 2.55em;
+  width: 250px;
+  position: absolute;
   z-index: 9;
 
   li {
