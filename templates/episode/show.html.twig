@@ -42,13 +42,16 @@
 
     <div class="my-4">
         {% if app.user  %}
-            {% include "episode/_form-comment.html.twig" %}
+            {% include "comment/_new.form.html.twig" %}
         {% endif %}
         {% for comment in episode.comments %}
             <div class="m-4 border">
                 <p class="m-1">Rating: {{ comment.rate }}</p>
                 <p class="m-1">{{ comment.comment }}</p>
                 <p class="m-1">{{ comment.author.username }}</p>
+                {% if app.user == comment.author or is_granted("ROLE_ADMIN") %}
+                    {% include 'comment/_delete.form.html.twig' %}
+                {% endif %}
             </div>
         {% else %}
             <p>Il n'y a pas de commentaire.</p>
