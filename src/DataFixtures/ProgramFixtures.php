@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Program;
+use App\Entity\User;
 use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 use Doctrine\Persistence\ObjectManager;
 
@@ -44,6 +45,7 @@ class ProgramFixtures extends BaseFixtures implements DependentFixtureInterface
     public function load(ObjectManager $manager)
     {
         $i = 0;
+        $contributor = $manager->getRepository(User::class)->findOneBy(['username'=>'contributor']);
         foreach (self::PROGRAMS as $title => $programArr) {
             $program = new Program();
             $category = $programArr['category'];
@@ -53,6 +55,7 @@ class ProgramFixtures extends BaseFixtures implements DependentFixtureInterface
                 ->setPoster($programArr['poster'])
                 ->setCategory($this->getReference($category))
                 ->setSlug($this->slugify->generate($title))
+                ->setCreator($contributor)
             ;
             $this->addReference('program_'.$i, $program);
             $manager->persist($program);
@@ -64,6 +67,6 @@ class ProgramFixtures extends BaseFixtures implements DependentFixtureInterface
 
     public function getDependencies()
     {
-        return [CategoryFixtures::class];
+        return [CategoryFixtures::class, UserFixtures::class];
     }
 }
