@@ -55,6 +55,21 @@ class ProgramRepository extends ServiceEntityRepository
         ;
     }
 
+    /**
+     * @param $input
+     * @return Program[] Returns an array of Program objects
+     *
+     */
+    public function findByInput(string $input)
+    {
+        return $this->createQueryBuilder('p')
+            ->select('p.title')
+            ->where('p.title LIKE :input')
+            ->setParameter('input', '%'.$input.'%')
+            ->getQuery()
+            ->getResult();
+    }
+
     /*
     public function findOneBySomeField($value): ?Program
     {
