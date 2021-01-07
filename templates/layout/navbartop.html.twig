@@ -1,7 +1,7 @@
-<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCategories" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Categories
 </a>
-<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+<div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
     {% for category in categories %}
         <a class="dropdown-item" href="{{ path('category_show', {categoryName:category.name|lower}) }}">{{ category.name }}</a>
     {% endfor %}

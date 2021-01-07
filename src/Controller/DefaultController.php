@@ -33,5 +33,4 @@ class DefaultController extends AbstractController
             'searchForm' => $form->createView()
         ]);
     }
-
 }
