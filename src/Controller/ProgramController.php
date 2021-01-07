@@ -9,7 +9,9 @@ use App\Form\ProgramType;
 use App\Form\SearchProgramType;
 use App\Repository\ProgramRepository;
 use App\Service\Slugify;
+use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -182,7 +184,9 @@ class ProgramController extends AbstractController
      *     "/{id}",
      *     name="delete",
      *     requirements={"id"="^\d+$"},
-     *     methods={"DELETE"})
+     *     methods={"DELETE"}
+     * )
+     * @IsGranted("ROLE_ADMIN")
      */
     public function delete(Request $request, Program $program): Response
     {
@@ -209,5 +213,28 @@ class ProgramController extends AbstractController
         $jsonObject = $serializer->serialize($programs, 'json', [AbstractNormalizer::IGNORED_ATTRIBUTES => ['category', 'seasons', 'actors', 'creator']]);
 
         return new Response($jsonObject, 200, ['Content-Type' => 'application/json']);
+    }
+
+    /**
+     * @Route(
+     *     "/{id}/watchlist",
+     *     name="watchlist",
+     *     methods={"GET"}
+     * )
+     */
+    public function addToWatchList(EntityManagerInterface $entityManager, Program $program)
+    {
+        $this->denyAccessUnlessGranted('IS_AUTHENTICATED_FULLY');
+        $user =  $this->getUser();
+        if ($user->isInWatchlist($program)) {
+            $user->removeWatchlist($program);
+        } else {
+            $user->addWatchlist($program);
+        }
+
+        $entityManager->flush();
+        return $this->json([
+            'isInWatchlist' => $user->isInWatchlist($program)
+        ]);
     }
 }
