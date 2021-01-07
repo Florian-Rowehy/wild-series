@@ -9,7 +9,6 @@ use App\Form\ProgramType;
 use App\Form\SearchProgramType;
 use App\Repository\ProgramRepository;
 use App\Service\Slugify;
-use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -69,6 +68,8 @@ class ProgramController extends AbstractController
                 ->setCreator($this->getUser());
             $entityManager->persist($program);
             $entityManager->flush();
+
+            $this->addFlash('success', 'La nouvelle série a bien été créée');
 
             $email = (new Email())
                 ->from($this->getParameter('mailer_from'))

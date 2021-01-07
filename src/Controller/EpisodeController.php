@@ -78,6 +78,7 @@ class EpisodeController extends AbstractController
                 ->setEpisode($episode);
             $entityManager->persist($comment);
             $entityManager->flush();
+            $this->addFlash('success', 'L\'épisode a bien été créé');
             return $this->redirectToRoute('episode_show', ['id'=>$episode->getId()]);
         }
         return $this->render('episode/show.html.twig', [
@@ -115,6 +116,7 @@ class EpisodeController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->remove($episode);
             $entityManager->flush();
+            $this->addFlash('danger', 'L\'épisode a bien été supprimé');
         }
 
         return $this->redirectToRoute('episode_index');
