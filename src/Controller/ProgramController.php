@@ -97,7 +97,7 @@ class ProgramController extends AbstractController
      */
     public function edit(Program $program, EntityManagerInterface $entityManager, Request $request, Slugify $slugify): Response
     {
-        if (!($this->getUser() == $program->getCreator())) {
+        if (!($this->getUser() == $program->getCreator()||$this->isGranted('ROLE_ADMIN'))) {
             // If not the owner, throws a 403 Access Denied exception
             throw new AccessDeniedException('Only the owner can edit the program!');
         }
@@ -161,6 +161,7 @@ class ProgramController extends AbstractController
         ]);
     }
 
+
     /**
      * @route(
      *     "/{slug}",
@@ -174,6 +175,25 @@ class ProgramController extends AbstractController
         return $this->render('program/show.html.twig', [
             'program' => $program,
         ]);
+    }
+
+    /**
+     * @Route(
+     *     "/{id}",
+     *     name="delete",
+     *     requirements={"id"="^\d+$"},
+     *     methods={"DELETE"})
+     */
+    public function delete(Request $request, Program $program): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$program->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($program);
+            $entityManager->flush();
+            $this->addFlash('danger', 'La série a bien été supprimée');
+        }
+
+        return $this->redirectToRoute('program_index');
     }
 
     /**

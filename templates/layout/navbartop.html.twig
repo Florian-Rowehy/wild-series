@@ -3,7 +3,7 @@
 </a>
 <div class="dropdown-menu" aria-labelledby="navbarDropdownCategories">
     {% for category in categories %}
-        <a class="dropdown-item" href="{{ path('category_show', {categoryName:category.name|lower}) }}">{{ category.name }}</a>
+        <a class="dropdown-item" href="{{ path('category_show', {name:category.name|lower}) }}">{{ category.name }}</a>
     {% endfor %}
 </div>
 
