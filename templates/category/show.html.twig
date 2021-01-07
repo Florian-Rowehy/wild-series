@@ -3,12 +3,16 @@
 {% block title %}Film by categories{% endblock %}
 
 {% block body %}
-    <h1>{{ category|capitalize }} films</h1>
-    {% for program in programs %}
+    <h1>{{ category.name|capitalize }} films</h1>
+    {% for program in category.programs %}
         <div>
-            <h2>{{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}</h2>
+            <h2>
+                {{ loop.index }} / {{ program.title }} - Catégorie : {{ program.category.name }}
+                {% if is_granted("ROLE_ADMIN") %}
+                    {% include 'category/_delete_form.html.twig' %}
+                {% endif %}
+            </h2>
             <p>{{ program.summary }}</p>
-            {# Lien vers la fiche de la série : #}
             <a href="{{ path("program_show", { slug: program.slug }) }}">Voir la fiche</a>
         </div>
     {% else %}

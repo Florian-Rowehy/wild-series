@@ -54,31 +54,37 @@ class CategoryController extends AbstractController
 
     /**
      * @Route(
-     *     "/{categoryName}",
+     *     "/{name}",
      *     name="show",
-     *     requirements={"categoryName"="^[a-zé]+$"},
+     *     requirements={"name"="^[a-zé]+$"},
      *     methods={"GET"}
      *     )
      */
-    public function show(string $categoryName): Response
+    public function show(Category $category): Response
     {
-        if (!$categoryName) {
-            throw $this
-                ->createNotFoundException('No category argument');
-        }
-
-        $programs = $this->getDoctrine()
-            ->getRepository(Program::class)
-            ->findByCategory($categoryName);
-
-        if (!$programs) {
-            throw $this->createNotFoundException(
-                'No program with '.$categoryName.' category found in \'program\' table.'
-            );
-        }
         return $this->render('category/show.html.twig', [
-            'programs' => $programs,
-            'category' => $categoryName,
+            'category' => $category,
         ]);
+    }
+
+    /**
+     * @Route(
+     *     "/{id}",
+     *     name="delete",
+     *     requirements={"id"="^\d+$"},
+     *     methods={"DELETE"}
+     *     )
+     * @IsGranted("ROLE_ADMIN")
+     */
+    public function delete(Request $request, Category $category): Response
+    {
+        if ($this->isCsrfTokenValid('delete'.$category->getId(), $request->request->get('_token'))) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->remove($category);
+            $entityManager->flush();
+            $this->addFlash('danger', 'La catégorie a bien été supprimée');
+        }
+
+        return $this->redirectToRoute('category_index');
     }
 }
